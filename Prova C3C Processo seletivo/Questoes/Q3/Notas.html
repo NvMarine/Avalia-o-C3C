@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de notas</title>
+</head>
+<body>
+    <h1>Sistemas de Notas</h1>
+    Nota:<input type="number" name="txtNota" id="txtNota">
+    <input type="button" value="Calcular situação" onclick="resultado()">
+    <div id ='Res'></div>
+
+    <script>
+        function resultado(){
+            let Nota = window.document.getElementById('txtNota')
+            let Res = window.document.getElementById('Res')
+            let n = Number(Nota.value)
+            let mult = Math.ceil(n/5)*5
+            if(n < 38){
+                Res.innerHTML += 'Reprovado'
+            }
+            else if(n < 40 && (n - mult) < 3){
+                Res.innerHTML = '<p>Aluno aprovado<\p>'
+                Res.innerHTML += `A nova nota arredondada é ${mult}`
+            }
+            else{
+                Res.innerHTML = '<p>Aluno aprovado<\p>'
+                Res.innerHTML += `A nova nota arredondada é ${mult}` 
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

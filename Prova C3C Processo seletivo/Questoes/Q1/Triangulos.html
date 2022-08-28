@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        input{
+            font: normal 18pt Arial;
+            width: 150px;
+        }
+        body{
+            font: normal 18pt Arial;
+        }
+        div#Res{
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tipos de triângulo</h1>
+    Lado 1:<input type="number" name="txtlado1" id="txtlado1"> 
+    Lado 2:<input type="number" name="txtlado2" id="txtlado2">
+    Lado 3:<input type="number" name="txtlado3" id="txtlado3">
+    <input type="button" value="Calcular" onclick="Calcula()">
+    <div id = 'Res'>Resultado:</div>
+    <script>
+        function Calcula(){   
+            let l1 = window.document.getElementById('txtlado1')
+            let l2 = window.document.getElementById('txtlado2')
+            let l3 = window.document.getElementById('txtlado3')
+            let Res = window.document.getElementById('Res')
+            let n1 = Number(l1.value)
+            let n2 = Number(l2.value)
+            let n3 = Number(l3.value)
+            if(n1==n2 && n2==n3){
+                Res.innerHTML += 'Triângulo equilátero'
+            }
+            else if(n1 == n2 || n1 == n3 || n2 == n3){
+                Res.innerHTML = 'Triângulo isóceles'
+            }
+            else{
+                Res.innerHTML = 'Triângulo escaleno'
+            }        
+        }
+    </script>
+</body>
+</html>
